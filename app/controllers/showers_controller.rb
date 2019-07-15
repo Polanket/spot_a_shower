@@ -1,5 +1,7 @@
 class ShowersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
+
   end
 
   def show
@@ -17,6 +19,6 @@ class ShowersController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 end
