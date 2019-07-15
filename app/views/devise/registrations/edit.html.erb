@@ -10,6 +10,18 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Name" } %>
+    <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "Last name" } %>
+    <%= f.label :owner?, "Are you a Shower owner?" %>
+    <%= f.check_box :owner?,
+                {},
+                true,
+                required: false %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
