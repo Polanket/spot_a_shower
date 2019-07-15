@@ -5,8 +5,10 @@
 
   <ul>
     <% @showers.each do |shower| %>
-    <li><%= shower.description %></li>
+    <li><%= link_to shower.description, shower_path(shower) %></li>
     <% end %>
   </ul>
+
+  <%= link_to "New Shower", new_shower_path, class:"btn btn-primary" %>
 
 </div>
