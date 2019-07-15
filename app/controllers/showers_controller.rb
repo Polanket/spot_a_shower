@@ -9,7 +9,12 @@ class ShowersController < ApplicationController
   end
 
   def create
-
+    @shower = Shower.new(shower_params)
+    if @shower.save
+      redirect_to shower_path(@shower)
+    else
+      render :new
+    end
   end
 
   def show
@@ -22,5 +27,9 @@ class ShowersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def shower_params
+    params.require(:shower).permit(:description, :address, :price, :features, :price)
   end
 end
