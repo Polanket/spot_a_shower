@@ -8,4 +8,7 @@
     <li> <%= @shower.price %> </li>
   </ul>
   <%= link_to "Edit", edit_shower_path(@shower), class: "btn btn-primary" %>
+  <%= link_to "Delete", shower_path(@shower), class: "btn btn-primary",
+  method: :delete,
+  data: { confirm: "Please confirm you want to delete this shower" } %>
 </div>
