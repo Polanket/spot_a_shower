@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :owned_showers, class_name: 'Shower'
-  has_many :showers, through: :bookings
+  has_many :booked_showers, through: :bookings, source: :shower
 end
