@@ -10,6 +10,7 @@ class ShowersController < ApplicationController
 
   def create
     @shower = Shower.new(shower_params)
+    @shower.user = current_user
     if @shower.save
       redirect_to shower_path(@shower)
     else
@@ -18,6 +19,7 @@ class ShowersController < ApplicationController
   end
 
   def show
+    @shower = Shower.find(params[:id])
   end
 
   def edit
@@ -30,6 +32,6 @@ class ShowersController < ApplicationController
   end
 
   def shower_params
-    params.require(:shower).permit(:description, :address, :price, :features, :price)
+    params.require(:shower).permit(:description, :address, :features, :price)
   end
 end
