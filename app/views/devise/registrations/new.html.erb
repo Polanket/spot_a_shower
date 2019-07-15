@@ -4,10 +4,22 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email,
+
+    <%= f.input :first_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "Name" } %>
+    <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "Last name" } %>
+    <%= f.label :owner?, "Are you a Shower owner?" %>
+    <%= f.check_box :owner?,
+                {},
+                true,
+                required: false %>
+    <%= f.input :email,
+                required: true,
+                input_html: { autocomplete: "email" } %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
