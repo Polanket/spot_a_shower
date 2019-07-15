@@ -23,9 +23,17 @@ class ShowersController < ApplicationController
   end
 
   def edit
+    @shower = Shower.find(params[:id])
   end
 
   def update
+    @shower = Shower.new(shower_params)
+    @shower.user = current_user
+    if @shower.save
+      redirect_to shower_path(@shower)
+    else
+      render :new
+    end
   end
 
   def destroy
