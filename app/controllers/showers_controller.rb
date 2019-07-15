@@ -4,13 +4,15 @@ class ShowersController < ApplicationController
     @showers = Shower.all
   end
 
-  def show
-  end
-
   def new
+    @shower = Shower.new
   end
 
   def create
+
+  end
+
+  def show
   end
 
   def edit
