@@ -1,7 +1,7 @@
 class ShowersController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
-    @showers = Showers.all
+    @showers = Shower.all
   end
 
   def show
