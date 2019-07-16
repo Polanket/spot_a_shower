@@ -1,5 +1,8 @@
-
-<h1>Profile page of <%= current_user.email%></h1>
+<h1>Profile page of: </h1>
+<p><%= current_user.first_name %></p>
+<p><%= current_user.last_name %></p>
+<p><%= current_user.email %></p>
+<p><%= current_user.owner %></p>
 
 <p> Your bookings: </p>
 
@@ -11,5 +14,3 @@
   <li><%= shower.price %></li>
 </ul>
 <% end %>
-
-
