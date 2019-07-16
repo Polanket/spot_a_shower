@@ -1,6 +1,6 @@
-<h1>Your Offered Showers:</h1>
+<h1>Your Booked Showers:</h1>
 <div class="card">
-  <% current_user.owned_showers.each do |shower| %>
+  <% current_user.booked_showers.each do |shower| %>
       <div class="card-shower">
         <!--<%= link_to shower.title, shower_path(shower) %>-->
         <%= cl_image_tag shower.photo, crop: :fill %>
