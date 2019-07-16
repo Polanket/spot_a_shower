@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'showers#index'
   resources :users, only: :show
   resources :showers do
-    resources :bookings
+    resources :bookings, only: [ :show, :create, :edit, :update, :destroy ]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
