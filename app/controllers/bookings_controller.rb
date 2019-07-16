@@ -9,7 +9,13 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.save
+    @booking.user = current_user
+    @booking.shower_id = params[:shower_id]
+    if @booking.save
+      redirect_to user_path(current_user)
+    else
+      render "showers/show"
+    end
   end
 
   def edit

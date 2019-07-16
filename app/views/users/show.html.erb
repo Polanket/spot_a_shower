@@ -1,2 +1,14 @@
 <h1>User Show Page</h1>
 <p><%= current_user %></p>
+
+<p> Your bookings </p>
+
+<ul>
+  <% current_user.booked_showers.each do |shower| %>
+  <li><%= shower.description %></li>
+  <li><%= shower.address %></li>
+  <li><%= shower.features %></li>
+  <li><%= shower.price %></li>
+  <% end %>
+
+</ul>
