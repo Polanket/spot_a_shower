@@ -9,8 +9,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    shower = Shower.find(params[:shower_id])
+
     @booking.user = current_user
-    @booking.shower_id = params[:shower_id]
+    @booking.shower = shower
     if @booking.save
       redirect_to user_path(current_user)
     else
