@@ -12,10 +12,13 @@
 <body>
   <%= render 'layouts/navbar' %>
 
-  <%= yield %>
+  <div class="container">
+    <%= yield %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
