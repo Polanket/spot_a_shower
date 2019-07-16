@@ -1,7 +1,7 @@
-<h1>User Show Page</h1>
-<p><%= current_user %></p>
 
-<p> Your bookings </p>
+<h1>Profile page of <%= current_user.email%></h1>
+
+<p> Your bookings: </p>
 
 <ul>
   <% current_user.booked_showers.each do |shower| %>
