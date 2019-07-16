@@ -1,0 +1,15 @@
+<h1>Your Booked Showers:</h1>
+<div class="card">
+  <% current_user.bookings.each do |booking| %>
+      <div class="card-shower">
+          <div class="card-shower-infos">
+            <div>
+              <h1><strong><%= booking.date %></strong></h1>
+              <p><%=  %></p>
+            </div>
+            <h2 class="card-shower-pricing"><%= " € " %></h2>
+            <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-shower-user avatar-bordered"/>
+          </div>
+      </div>
+  <% end %>
+</div>
