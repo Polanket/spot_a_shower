@@ -4,6 +4,7 @@
     <div class="shower-info">
       <p><%= shower.address %></p>
       <p><%= shower.price %></p>
+      <%= link_to "Edit", edit_shower_path(shower), class:"btn btn-warning" %>
     </div>
   <% end %>
 </div>
