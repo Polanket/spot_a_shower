@@ -1,16 +1,27 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 20px;
+}
+
+
 .card-shower {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
 }
 
 .card-shower > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
+}
+
+.card-shower h1 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .card-shower h2 {
@@ -46,6 +57,10 @@
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+
+.btn {
+  margin-top: 50px;
 }
 
 // Smallest device

@@ -4,5 +4,5 @@ class Shower < ApplicationRecord
   has_many :users, through: :bookings
 
   validates :price, numericality: { only_integer: true }
-  validates :description, :address, :features, :availability, presence: true
+  validates :description, :address, :features, presence: true
 end
