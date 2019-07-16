@@ -6,7 +6,7 @@
     <% @showers.each do |shower| %>
       <div class="card-shower">
         <!--<%= link_to shower.title, shower_path(shower) %>-->
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+        <%= cl_image_tag shower.photo, crop: :fill %>
           <div class="card-shower-infos">
             <div>
               <h1>title</h1>

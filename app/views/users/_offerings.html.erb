@@ -1,10 +1,17 @@
-<div class="offering-container">
+<h1>Your Offered Showers:</h1>
+<div class="card">
   <% current_user.owned_showers.each do |shower| %>
-    <h2><%= shower.title %></h2>
-    <div class="shower-info">
-      <p><%= shower.address %></p>
-      <p><%= shower.price %></p>
-      <%= link_to "Edit", edit_shower_path(shower), class:"btn btn-warning" %>
-    </div>
+      <div class="card-shower">
+        <!--<%= link_to shower.title, shower_path(shower) %>-->
+        <%= cl_image_tag shower.photo, crop: :fill %>
+          <div class="card-shower-infos">
+            <div>
+              <h1><strong><%= shower.title %></strong></h1>
+              <p><%= shower.address %></p>
+            </div>
+            <h2 class="card-shower-pricing"><%= " #{shower.price}€ " %></h2>
+            <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-shower-user avatar-bordered"/>
+          </div>
+      </div>
   <% end %>
 </div>
