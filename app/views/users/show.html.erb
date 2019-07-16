@@ -1,5 +1,7 @@
 
-<%= render 'users/offerings' %>
+<% if current_user.owner && current_user.owned_showers %>
+  <%= render 'users/offerings' %>
+<% end %>
 
 <div class="user-info">
   <h1>Profile page of: </h1>
