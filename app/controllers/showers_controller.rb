@@ -44,7 +44,7 @@ class ShowersController < ApplicationController
   end
 
   def shower_params
-    params.require(:shower).permit(:description, :address, :features, :price, :photo)
+    params.require(:shower).permit(:title, :description, :address, :features, :price, :photo)
   end
 
   def set_shower
