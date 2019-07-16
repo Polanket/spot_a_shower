@@ -5,11 +5,20 @@
   margin-top: 20px;
 }
 
+.card
+  a {
+    color: rgb(24,24,24);
+    text-decoration: none;
+  }
+  a:hover {
+    color:rgb(144,144,144);
+  }
 
 .card-shower {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 }
 
 .card-shower > img {
@@ -34,6 +43,12 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
+}
+
+.card-shower-infos .card-shower-pricing {
+  position: relative;
+  margin-right: 8px;
+  margin-top: 8px;
 }
 
 
@@ -62,6 +77,8 @@
 .btn {
   margin-top: 50px;
 }
+
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
