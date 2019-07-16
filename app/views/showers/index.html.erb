@@ -4,11 +4,11 @@
 
   <% @showers.each do |shower| %>
      <div class="card-shower">
-      <%= link_to shower.title, shower_path(shower) %>
+      <% link_to shower.title, shower_path(shower) %>
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
         <div class="card-shower-infos">
           <div>
-            <h1><%= "Titulo"#@shower.title %></h1>
+            <h1><%= shower.title %></h1>
             <h2><%= shower.address %></h2>
           </div>
           <h2 class="card-shower-pricing"><%= shower.price %></h2>
