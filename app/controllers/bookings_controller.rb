@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
 
     @booking.user = current_user
     @booking.shower = shower
+
     if @booking.save
       redirect_to user_path(current_user)
     else
