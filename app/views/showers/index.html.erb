@@ -7,7 +7,11 @@
     <% @showers.each do |shower| %>
       <%= link_to shower_path(shower) do %>
         <div class="card-shower">
-          <%= cl_image_tag shower.photo, crop: :fill%>
+          <% if shower.photo.present? %>
+            <%= cl_image_tag shower.photo, crop: :fill%>
+          <% else %>
+            <%= image_tag('bath.jpg') %>
+          <% end %>
             <div class="card-shower-infos">
               <div>
                 <h1><%= shower.title %></h1>
