@@ -1,6 +1,27 @@
-<h1>User Show Page</h1>
-<p><%= current_user.first_name %></p>
-<p><%= current_user.last_name %></p>
-<p><%= current_user.email %></p>
-<p><%= current_user.owner %></p>
+<div class="user-info">
+  <h1>Profile page of: </h1>
 
+  <p><%= current_user.first_name %></p>
+
+  <p><%= current_user.last_name %></p>
+
+  <p><%= current_user.email %></p>
+
+  <p><%= current_user.owner %></p>
+
+</div>
+
+<div class="booking-info">
+  <p> Your bookings: </p>
+
+  <% current_user.booked_showers.each do |shower| %>
+
+    <ul>
+      <li><%= shower.description %></li>
+      <li><%= shower.address %></li>
+      <li><%= shower.features %></li>
+      <li><%= shower.price %></li>
+    </ul>
+
+  <% end %>
+</div>

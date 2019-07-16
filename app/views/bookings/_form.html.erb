@@ -1,0 +1,5 @@
+<!-- app/views/restaurants/_form.html.erb -->
+<%= simple_form_for [@shower, @booking] do |f| %>
+  <%= f.datetime_select :date, minute_step: 30 %>
+  <%= f.submit %>
+<% end %>

@@ -3,13 +3,18 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
-    @booking.save
+    shower = Shower.find(params[:shower_id])
+
+    @booking.user = current_user
+    @booking.shower = shower
+
+    if @booking.save
+      redirect_to user_path(current_user)
+    else
+      render "showers/show"
+    end
   end
 
   def edit

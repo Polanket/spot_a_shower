@@ -1,15 +1,25 @@
-<div class="container">
+<div class="shower-page">
   <h1>Showers#show</h1>
+
   <p>Find me in app/views/showers/show.html.erb</p>
+
   <ul>
     <li> <%= @shower.description %> </li>
     <li> <%= @shower.address %> </li>
     <li> <%= @shower.features %> </li>
     <li> <%= @shower.price %> </li>
   </ul>
-  <%= link_to "Back Home", showers_path, class: "btn btn-success" %>
-  <%= link_to "Edit", edit_shower_path(@shower), class: "btn btn-primary" %>
-  <%= link_to "Delete", shower_path(@shower), class: "btn btn-primary",
+
+  <%= link_to "Back Home", showers_path, class: "btn btn-primary" %>
+
+  <%= link_to "Edit", edit_shower_path(@shower), class: "btn btn-warning" %>
+
+  <%= link_to "Delete", shower_path(@shower), class: "btn btn-danger",
   method: :delete,
   data: { confirm: "Please confirm you want to delete this shower" } %>
 </div>
+
+<div class="booking-form">
+  <%= render 'bookings/form' %>
+</div>
+

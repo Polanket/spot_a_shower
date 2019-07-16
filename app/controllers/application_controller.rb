@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  # Below code allows us to store the user's location before authenticating to redirect him back to that page
   before_action :store_user_location!, if: :storable_location?
   before_action :authenticate_user!
 
