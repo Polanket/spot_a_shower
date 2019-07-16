@@ -4,18 +4,19 @@
 
   <div class="card">
     <% @showers.each do |shower| %>
+    <%= link_to shower_path(shower) do %>
       <div class="card-shower">
-        <!--<%= link_to shower.title, shower_path(shower) %>-->
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+        <%= cl_image_tag shower.photo, crop: :fill%>
           <div class="card-shower-infos">
             <div>
-              <h1>title</h1>
-              <h2>address</h2>
+              <h1><%= shower.title %></h1>
+              <h2><%= shower.address %></h2>
             </div>
-            <h2 class="card-shower-pricing"><%= shower.price %></h2>
+            <h2 class="card-shower-pricing">€<%= shower.price %></h2>
             <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-shower-user avatar-bordered"/>
           </div>
       </div>
+    <% end %>
     <% end %>
   </div>
 
