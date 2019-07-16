@@ -3,25 +3,26 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @shower.photo, crop: :fill %>');">
   </div>
 
+  <div class="container">
 
 
+    <ul>
+      <li> <%= @shower.description %> </li>
+      <li> <%= @shower.address %> </li>
+      <li> <%= @shower.features %> </li>
+      <li> <%= @shower.price %> </li>
+    </ul>
 
-  <ul>
-    <li> <%= @shower.description %> </li>
-    <li> <%= @shower.address %> </li>
-    <li> <%= @shower.features %> </li>
-    <li> <%= @shower.price %> </li>
-  </ul>
+    <%= link_to "Back Home", showers_path, class: "btn btn-primary" %>
 
-  <%= link_to "Back Home", showers_path, class: "btn btn-primary" %>
+    <%= link_to "Edit", edit_shower_path(@shower), class: "btn btn-warning" %>
 
-  <%= link_to "Edit", edit_shower_path(@shower), class: "btn btn-warning" %>
+    <%= link_to "Delete", shower_path(@shower), class: "btn btn-danger",
+    method: :delete,
+    data: { confirm: "Please confirm you want to delete this shower" } %>
 
-  <%= link_to "Delete", shower_path(@shower), class: "btn btn-danger",
-  method: :delete,
-  data: { confirm: "Please confirm you want to delete this shower" } %>
+    <div class="booking-form">
+      <%= render 'bookings/form' %>
+    </div>
 
-<div class="booking-form">
-  <%= render 'bookings/form' %>
-</div>
-
+  </div>
