@@ -1,0 +1,12 @@
+<h1>Your Booked Showers:</h1>
+<div class="card">
+  <% current_user.bookings.each do |booking| %>
+      <div class="card-shower">
+          <div class="card-shower-infos">
+            <div>
+              <h1><strong><%= booking.date %></strong></h1>
+            </div>
+          </div>
+        </div>
+  <% end %>
+</div>
