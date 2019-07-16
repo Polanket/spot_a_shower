@@ -5,23 +5,23 @@
 
   <div class="card">
     <% @showers.each do |shower| %>
-    <%= link_to shower_path(shower) do %>
-      <div class="card-shower">
-        <%= cl_image_tag shower.photo, crop: :fill%>
-          <div class="card-shower-infos">
-            <div>
-              <h1><%= shower.title %></h1>
-              <h2><%= shower.address %></h2>
+      <%= link_to shower_path(shower) do %>
+        <div class="card-shower">
+          <%= cl_image_tag shower.photo, crop: :fill%>
+            <div class="card-shower-infos">
+              <div>
+                <h1><%= shower.title %></h1>
+                <h2><%= shower.address %></h2>
+              </div>
+              <h2 class="card-shower-pricing">€<%= shower.price %></h2>
+              <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-shower-user avatar-bordered"/>
             </div>
-            <h2 class="card-shower-pricing">€<%= shower.price %></h2>
-            <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-shower-user avatar-bordered"/>
-          </div>
-      </div>
-    </div>
+        </div>
     <% end %>
     <% end %>
   </div>
-
+<%= link_to "New Shower", new_shower_path, class:"btn btn-primary" %>
 </div>
 
-<%= link_to "New Shower", new_shower_path, class:"btn btn-primary" %>
+
+
