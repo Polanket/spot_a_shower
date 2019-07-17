@@ -27,7 +27,7 @@
       <% if @shower.user.avatar.present? %>
       <%= cl_image_tag @shower.user.avatar, crop: :fill %>
       <% else %>
-      <%= image_tag "avatar",  class="avatar-large" %>
+      <%= image_tag "avatar",  class:"avatar-large" %>
       <% end %>
       <p><%= @shower.user.first_name  %></p>
     </div>
