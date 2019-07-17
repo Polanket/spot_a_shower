@@ -23,13 +23,13 @@
         <li> <%= @shower.price %> <span>€</span> </li>
       </ul>
     </div>
-    <div class="pr-5 bd-highlight w-25">
+    <div class="pr-5 bd-highlight w-25 text-center">
       <% if @shower.user.avatar.present? %>
       <%= cl_image_tag @shower.user.avatar, crop: :fill %>
       <% else %>
       <%= image_tag "avatar",  class:"avatar-large" %>
       <% end %>
-      <p><%= @shower.user.first_name  %></p>
+      <p><%= @shower.user.first_name %></p>
     </div>
     <div class="form-group">
       <%= render 'bookings/form' %>
