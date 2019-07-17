@@ -8,3 +8,12 @@
   margin: 0;
   padding: 0;
 }
+
+.bookings {
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.bookings h1:first-of-type {
+    color: $main_blue;
+  }
