@@ -8,7 +8,7 @@
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-  <script src="https://kit.fontawesome.com/e57da2e305.js"></script>
+  <script src="<%= ENV['FONTAWESOME_URL'] %>"></script>
 
 </head>
 <body>
