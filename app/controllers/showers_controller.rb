@@ -39,6 +39,7 @@ class ShowersController < ApplicationController
   end
 
   def destroy
+    @shower = Shower.find(params[:id])
     @shower.destroy
 
     redirect_to showers_path
