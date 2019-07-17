@@ -8,12 +8,16 @@
 }
 
 .card
+  h1 {
+    color: $main_blue;
+  }
   a {
     color: rgb(24,24,24);
     text-decoration: none;
   }
   a:hover {
     color:rgb(144,144,144);
+    text-decoration: none;
   }
 
 .card-shower {
