@@ -5,15 +5,7 @@
   </div>
 </div>
 
-
 <div class="container">
-  <!-- <h1>Showers#index</h1>
-
-  <p>Find me in app/views/showers/index.html.erb</p> -->
-
-
-
-
   <div class="card">
     <% @showers.each do |shower| %>
       <%= link_to shower_path(shower) do %>
@@ -35,7 +27,6 @@
       <% end %>
     <% end %>
   </div>
-  <%= link_to "New Shower", new_shower_path, class:"btn btn-primary" %>
 </div>
 
 
