@@ -22,7 +22,7 @@
         <li> <%= @shower.price %> <span>€</span> </li>
       </ul>
     </div>
-    <div class="pr-5 bd-highlight">
+    <div class="pr-5 bd-highlight w-25">
       <% if @shower.user.avatar.present? %>
       <%= cl_image_tag @shower.user.avatar, crop: :fill %>
       <% else %>
