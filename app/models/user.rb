@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :owned_showers, class_name: 'Shower'
   has_many :booked_showers, through: :bookings, source: :shower
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
