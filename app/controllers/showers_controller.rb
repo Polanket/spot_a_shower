@@ -26,6 +26,7 @@ class ShowersController < ApplicationController
   end
 
   def edit
+    @shower = Shower.new
   end
 
   def update
