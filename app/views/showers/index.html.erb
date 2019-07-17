@@ -1,11 +1,11 @@
 <div class="banner-index">
   <div class="container">
-    <h1>We Got You Covered (and Showered)</h1>
+    <h1>We Got You Covered <span>[</span> and Showered <span>]</span></h1>
     <p>Take a shower on the spot! We have the solution to unexpected events!🚿🧽</p>
   </div>
 </div>
 
-<div class="container">
+<div class="container pt-3">
   <div class="card">
     <% @showers.each do |shower| %>
       <%= link_to shower_path(shower) do %>
