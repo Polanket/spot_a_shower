@@ -10,10 +10,20 @@
 }
 
 .bookings {
+  margin-top: 20px;
   padding: 0;
   margin-bottom: 24px;
 }
 
-.bookings h1:first-of-type {
-    color: $main_blue;
-  }
+.bookings h1 {
+  color: $main_blue;
+}
+
+.offerings h1 {
+  margin-top: 20px;
+  color: $main_blue;
+}
+
+.profile-label {
+  color: $main_blue;
+}
