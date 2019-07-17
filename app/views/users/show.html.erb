@@ -1,18 +1,20 @@
-<div class="profile-page">
-  <div class="showers">
-    <% if current_user.owner && current_user.owned_showers %>
-      <%= render 'users/offerings' %>
-    <% end %>
+<div class="container mt-4">
+  <div class="profile-page">
+    <div class="showers">
+      <% if current_user.owner && current_user.owned_showers %>
+        <%= render 'users/offerings' %>
+      <% end %>
 
-    <%= render 'users/bookings' %>
-  </div>
+      <%= render 'users/bookings' %>
+    </div>
 
-  <div class="user-info">
-    <h1>Profile page of: </h1>
-    <p><%= current_user.first_name %></p>
-    <p><%= current_user.last_name %></p>
-    <p><%= current_user.email %></p>
-    <p><%= current_user.owner %></p>
+    <div class="user-info">
+      <h1>Profile page of: </h1>
+      <p><%= current_user.first_name %></p>
+      <p><%= current_user.last_name %></p>
+      <p><%= current_user.email %></p>
+      <p><%= current_user.owner %></p>
+    </div>
   </div>
 </div>
 
