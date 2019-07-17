@@ -1,6 +1,6 @@
 <!-- app/views/restaurants/_form.html.erb -->
-<%= simple_form_for [@shower, @booking] do |f| %>
+<%= simple_form_for [@shower, @booking], html: { class: "form-group"} do |f| %>
 <%= f.input :date, label: false, class: "form-text text-muted" %>
 <%= f.input :time, collection: Booking.time, selected: '9:30 - 10:00', label: false, class: "form-text text-muted" %>
-<%= f.submit 'Book Shower', class: "btn btn-primary" %>
+<%= f.submit 'Book Shower', class: "btn btn-primary mt-2" %>
 <% end %>
