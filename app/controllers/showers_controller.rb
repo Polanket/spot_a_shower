@@ -14,6 +14,7 @@ class ShowersController < ApplicationController
     @shower = Shower.new(shower_params)
     @shower.user = current_user
     if @shower.save
+      current_user.owner = true
       redirect_to shower_path(@shower)
     else
       render :new
