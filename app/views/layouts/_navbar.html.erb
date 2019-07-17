@@ -1,44 +1,44 @@
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
+  <%= link_to root_path, class: "navbar-brand" do %>
+  <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <% end %>
 
-    <% if user_signed_in? %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
-          </li>
-          <% if current_user.owner %>
-            <li class="nav-item">
-              <%= link_to "Offer shower", new_shower_path, class: "nav-link" %>
-            </li>
-          <% end %>
-          <li class="nav-item dropdown">
-            <% if current_user.avatar %>
-              <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <% else %>
-              <%= image_tag 'https://superawesomevectors.com/wp-content/uploads/2015/11/black-simple-shower-icon.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <% end %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        </ul>
-      </div>
-    <% else %>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-          </li>
-        </ul>
-      </div>
-    <% end %>
+  <% if user_signed_in? %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
+      </li>
+      <% if current_user.owner %>
+      <li class="nav-item">
+        <%= link_to "Offer shower", new_shower_path, class: "nav-link" %>
+      </li>
+      <% end %>
+      <li class="nav-item dropdown">
+        <% if current_user.avatar %>
+        <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+        <%= image_tag 'https://superawesomevectors.com/wp-content/uploads/2015/11/black-simple-shower-icon.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% end %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
   </div>
+  <% else %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+      </li>
+    </ul>
+  </div>
+  <% end %>
+</div>
