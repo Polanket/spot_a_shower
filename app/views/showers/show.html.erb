@@ -12,6 +12,7 @@
     <div class="p-2 flex-grow-1 bd-highlight">
       <h1><%= @shower.title %> </h1>
       <p> <%= @shower.address %> </p>
+      <hr>
 
       <ul class="list-unstyled">
         <li class="py-2"><i class="fas fa-shower"></i><strong> Description:</strong></li>
@@ -35,7 +36,6 @@
     </div>
   </div>
   <hr>
-  <%= link_to "<< Back Home", showers_path, class: "btn btn-primary" %>
 
   <%= link_to "Edit", edit_shower_path(@shower), class: "btn btn-warning" %>
 
