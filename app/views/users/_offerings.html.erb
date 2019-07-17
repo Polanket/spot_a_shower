@@ -2,6 +2,7 @@
   <h1>My Showers:</h1>
   <div class="card">
     <% current_user.owned_showers.each do |shower| %>
+      <%= link_to shower_path(shower) do %>
         <div class="card-shower">
           <%= cl_image_tag shower.photo, crop: :fill %>
             <div class="card-shower-infos">
@@ -13,6 +14,7 @@
               <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered" %>
             </div>
         </div>
+      <% end %>
     <% end %>
   </div>
 </div>

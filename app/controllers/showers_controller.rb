@@ -26,12 +26,13 @@ class ShowersController < ApplicationController
   end
 
   def edit
+    @shower = Shower.new
   end
 
   def update
     @shower = Shower.new(shower_params)
     @shower.user = current_user
-    if @shower.save
+    if @shower.update
       redirect_to shower_path(@shower)
     else
       render :new

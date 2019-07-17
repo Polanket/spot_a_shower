@@ -11,12 +11,12 @@
       </div>
 
     <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h4 class="card-title">Name:</h5>
-        <h5 class="card-title"><strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong></h5>
-        <h4 class="card-title">Email:</h5>
-        <h5 class="card-title"><strong><%= current_user.email %></strong></h5>
-        <div class="d-flex justify-content-center">
+      <div class="card-shower p-4" style="width: 18rem;">
+        <h4 class="profile-label">Name:</h5>
+        <h5 class="profile-info"><strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong></h5>
+        <h4 class="profile-label">Email:</h5>
+        <h5 class="profile-info"><strong><%= current_user.email %></strong></h5>
+        <div class="button d-flex justify-content-center">
           <%= link_to "Edit", edit_user_registration_path, class:"btn btn-warning"%>
         </div>
       </div>
@@ -28,7 +28,7 @@
             <h5 class="profile-info"><strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong></h5>
             <h4 class="profile-label">Email:</h5>
             <h5 class="profile-info"><strong><%= current_user.email %></strong></h5>
-            <div class="d-flex justify-content-center">
+            <div class="button d-flex justify-content-center">
               <%= link_to "Edit", edit_user_registration_path, class:"btn btn-warning"%>
             </div>
           </div>
