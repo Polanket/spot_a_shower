@@ -1,6 +1,6 @@
 class ShowersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show ]
-  before_action :set_shower, only: [ :show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show, :results]
+  before_action :set_shower, only: [:show, :edit, :update, :destroy]
 
   def index
     @showers = Shower.all
@@ -56,6 +56,8 @@ class ShowersController < ApplicationController
 
     redirect_to showers_path
   end
+
+  private
 
   def shower_params
     params.require(:shower).permit(:title, :description, :address, :features, :price, :photo)
