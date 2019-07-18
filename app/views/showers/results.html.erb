@@ -1,5 +1,10 @@
-<div class="d-flex mr-3">
-    <div class="card p-3 w-50">
+
+
+
+<div class="row pl-3">
+  <div class="col-12 col-sm-7 col-lg-6">
+    <div class="card-group">
+     <div class="card">
       <% @results.each do |shower| %>
       <%= link_to shower_path(shower) do %>
       <div class="card-shower">
@@ -9,7 +14,7 @@
         <%= image_tag('bath.jpg') %>
         <% end %>
         <div class="card-shower-infos">
-          <div>
+          <div class="card-shower-overflow">
             <h1><%= shower.title %></h1>
             <h2><%= shower.address %></h2>
           </div>
@@ -20,6 +25,52 @@
       <% end %>
       <% end %>
     </div>
+  </div>
+</div>
+
+<div class="col-12 col-sm-5 col-lg-6">
+ <div
+ id="map"
+ data-markers="<%= @markers.to_json %>"
+ data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+ ></div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="d-flex mr-3">
+  <div class="card p-3 w-50">
+    <% @results.each do |shower| %>
+    <%= link_to shower_path(shower) do %>
+    <div class="card-shower">
+      <% if shower.photo.present? %>
+      <%= cl_image_tag shower.photo, crop: :fill%>
+      <% else %>
+      <%= image_tag('bath.jpg') %>
+      <% end %>
+      <div class="card-shower-infos">
+        <div class="card-shower-overflow">
+          <h1><%= shower.title %></h1>
+          <h2 class="card-text"><%= shower.address %></h2>
+        </div>
+        <h2 class="card-shower-pricing">€<%= shower.price %></h2>
+        <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered" %>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 
   <div
   id="map"
@@ -27,3 +78,4 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
   ></div>
 </div>
+-->
