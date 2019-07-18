@@ -13,7 +13,7 @@ class Shower < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_by_name_and_address,
-    against: [ :title, :address ],
+    against: [:title, :address],
     using: {
       tsearch: { prefix: true }
     }

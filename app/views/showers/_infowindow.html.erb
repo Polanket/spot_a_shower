@@ -1,15 +1,15 @@
-        <div class="card-shower">
-          <% if result.photo.present? %>
-            <%= cl_image_tag result.photo, crop: :fill%>
-          <% else %>
-            <%= image_tag('bath.jpg') %>
-          <% end %>
-            <div class="card-shower-infos">
-              <div>
-                <h1><%= result.title %></h1>
-                <h2><%= result.address %></h2>
-              </div>
-              <h2 class="card-shower-pricing">€<%= result.price %></h2>
-              <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered" %>
-            </div>
-        </div>
+<div class="card-shower">
+  <% if result.photo.present? %>
+    <%= cl_image_tag result.photo, crop: :fill%>
+  <% else %>
+    <%= image_tag('bath.jpg') %>
+  <% end %>
+    <div class="card-shower-infos">
+      <div>
+        <h1><%= result.title %></h1>
+        <h2><%= result.address %></h2>
+      </div>
+      <h2 class="card-shower-pricing">€<%= result.price %></h2>
+      <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered" %>
+    </div>
+</div>
