@@ -6,6 +6,17 @@ class ShowersController < ApplicationController
     @showers = Shower.all
   end
 
+  def results
+    @results = Shower.where.not(latitude: nil, longitude: nil)
+
+    @markers = @results.map do |result|
+      {
+        lat: result.latitude,
+        lng: result.longitude
+      }
+    end
+  end
+
   def new
     @shower = Shower.new
   end
