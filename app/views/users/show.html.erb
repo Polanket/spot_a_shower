@@ -11,25 +11,25 @@
       </div>
 
     <div class="card" style="width: 18rem; height: 18rem;">
-      <div class="card-shower p-4" style="width: 18rem;">
+      <div class="card-shower d-flex flex-column p-4" style="width: 18rem;">
         <h4 class="profile-label">Name:</h5>
         <h5 class="profile-info"><strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong></h5>
         <h4 class="profile-label">Email:</h5>
         <h5 class="profile-info"><strong><%= current_user.email %></strong></h5>
-        <div class="button d-flex justify-content-center">
-          <%= link_to "Edit", edit_user_registration_path, class:"btn btn-warning"%>
+        <div class="d-flex align-items-end flex-grow-1 justify-content-around">
+          <%= link_to "Edit", edit_user_registration_path %>
         </div>
       </div>
     </div>
     <% else %>
         <div class="d-flex justify-content-center">
-          <div class="card-shower p-4">
+          <div class="card-shower d-flex flex-column p-4">
             <h4 class="profile-label">Name:</h5>
             <h5 class="profile-info"><strong><%= "#{current_user.first_name} #{current_user.last_name}" %></strong></h5>
             <h4 class="profile-label">Email:</h5>
             <h5 class="profile-info"><strong><%= current_user.email %></strong></h5>
             <div class="button d-flex justify-content-center">
-              <%= link_to "Edit", edit_user_registration_path, class:"btn btn-warning"%>
+              <%= link_to "Edit", edit_user_registration_path %>
             </div>
           </div>
         </div>
