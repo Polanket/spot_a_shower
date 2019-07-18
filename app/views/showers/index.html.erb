@@ -5,12 +5,12 @@
 
     <div class="pt-2">
       <%= form_tag results_path, class: "form-group", method: :get do %>
-      <div class='row form-inline'>
-        <div class="input-group-append col-6 col-lg-8">
+      <div class='row'>
+        <div class="input-group-append col-12 col-sm-8 col-lg-6">
           <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-            placeholder: "Search by name or city" %>
+            placeholder: "Type here..." %>
             <%= submit_tag "Search", class: "btn btn-primary mt-0" %>
           </div>
         </div>
