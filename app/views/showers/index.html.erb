@@ -3,45 +3,46 @@
     <h1>We've Got You Covered <span>[ and </span><span class="typed"></span><span> ]</span></h1>
     <p>Take a shower on the spot! We have the solution to unexpected events!</p>
 
-    <%= form_tag results_path, method: :get do %>
-    <div class= "form-row pt-3">
-      <div class="col-4">
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Search by name or city" %>
+    <div class="pt-2">
+      <%= form_tag results_path, class: "form-group", method: :get do %>
+      <div class='row form-inline'>
+        <div class="input-group-append col-6 col-lg-8">
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+            placeholder: "Search by name or city" %>
+            <%= submit_tag "Search", class: "btn btn-primary mt-0" %>
+          </div>
+        </div>
+        <% end %>
       </div>
-      <div class="col">
-      <%= button_tag "Search", class: "btn btn-primary mt-0 ml-2 w-25 border" %>
+    </div>
+  </div>
+
+
+  <div class="container pt-3 pb-5">
+    <div class="card">
+      <% @showers.each do |shower| %>
+      <%= link_to shower_path(shower) do %>
+      <div class="card-shower">
+        <% if shower.photo.present? %>
+        <%= cl_image_tag shower.photo, crop: :fill%>
+        <% else %>
+        <%= image_tag('bath.jpg') %>
+        <% end %>
+        <div class="card-shower-infos">
+          <div>
+            <h1><%= shower.title %></h1>
+            <h2><%= shower.address %></h2>
+          </div>
+          <h2 class="card-shower-pricing">€<%= shower.price %></h2>
+          <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered" %>
+        </div>
       </div>
+      <% end %>
       <% end %>
     </div>
   </div>
-</div>
-
-<div class="container pt-3 pb-5">
-  <div class="card">
-    <% @showers.each do |shower| %>
-      <%= link_to shower_path(shower) do %>
-        <div class="card-shower">
-          <% if shower.photo.present? %>
-            <%= cl_image_tag shower.photo, crop: :fill%>
-          <% else %>
-            <%= image_tag('bath.jpg') %>
-          <% end %>
-            <div class="card-shower-infos">
-              <div>
-                <h1><%= shower.title %></h1>
-                <h2><%= shower.address %></h2>
-              </div>
-              <h2 class="card-shower-pricing">€<%= shower.price %></h2>
-              <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered" %>
-            </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
 
 
 
