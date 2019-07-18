@@ -10,4 +10,12 @@ class Shower < ApplicationRecord
 
   validates :price, numericality: { only_integer: true }
   validates :description, :address, :features, presence: true
+
+  include PgSearch
+  pg_search_scope :search_by_name_and_address,
+    against: [ :title, :address ],
+    using: {
+      tsearch: { prefix: true }
+    }
+  end
 end
