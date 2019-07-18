@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :showers do
     resources :bookings, only: [ :show, :create, :edit, :update, :destroy ]
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'results', to: 'showers#results'
 end
