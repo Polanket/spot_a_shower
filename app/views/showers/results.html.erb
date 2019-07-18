@@ -1,9 +1,5 @@
-
-
-
 <div class="row pl-3">
   <div class="col-12 col-sm-7 col-lg-6">
-    <div class="card-group">
      <div class="card">
       <% @results.each do |shower| %>
       <%= link_to shower_path(shower) do %>
@@ -14,9 +10,9 @@
         <%= image_tag('bath.jpg') %>
         <% end %>
         <div class="card-shower-infos">
-          <div class="card-shower-overflow">
+          <div>
             <h1><%= shower.title %></h1>
-            <h2><%= shower.address %></h2>
+            <h2><%= shower.address.split(',').first(2).join %></h2>
           </div>
           <h2 class="card-shower-pricing">€<%= shower.price %></h2>
           <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered" %>
@@ -25,7 +21,6 @@
       <% end %>
       <% end %>
     </div>
-  </div>
 </div>
 
 <div class="col-12 col-sm-5 col-lg-6">
