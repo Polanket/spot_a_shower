@@ -1,25 +1,25 @@
 <div class="d-flex mr-3">
-    <div class="card p-3 w-50">
-      <% @results.each do |shower| %>
-      <%= link_to shower_path(shower) do %>
-      <div class="card-shower">
-        <% if shower.photo.present? %>
-        <%= cl_image_tag shower.photo, crop: :fill%>
-        <% else %>
-        <%= image_tag('bath.jpg') %>
-        <% end %>
-        <div class="card-shower-infos">
-          <div>
-            <h1><%= shower.title %></h1>
-            <h2><%= shower.address %></h2>
-          </div>
-          <h2 class="card-shower-pricing">€<%= shower.price %></h2>
-          <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered" %>
+  <div class="card p-3 w-50">
+    <% @results.each do |shower| %>
+    <%= link_to shower_path(shower) do %>
+    <div class="card-shower">
+      <% if shower.photo.present? %>
+      <%= cl_image_tag shower.photo, crop: :fill%>
+      <% else %>
+      <%= image_tag('bath.jpg') %>
+      <% end %>
+      <div class="card-shower-infos">
+        <div class="card-shower-overflow">
+          <h1><%= shower.title %></h1>
+          <h2 class="card-text"><%= shower.address %></h2>
         </div>
+        <h2 class="card-shower-pricing">€<%= shower.price %></h2>
+        <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered" %>
       </div>
-      <% end %>
-      <% end %>
     </div>
+    <% end %>
+    <% end %>
+  </div>
 
   <div
   id="map"
