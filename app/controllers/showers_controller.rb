@@ -12,7 +12,8 @@ class ShowersController < ApplicationController
     @markers = @results.map do |result|
       {
         lat: result.latitude,
-        lng: result.longitude
+        lng: result.longitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { result: result })
       }
     end
   end
