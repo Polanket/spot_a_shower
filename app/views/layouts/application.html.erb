@@ -13,17 +13,18 @@
 </head>
 <body>
   <%= render 'layouts/navbar' %>
+  <div class="main-content">
+    <%= yield %>
 
-  <%= yield %>
+    <% if notice %>
+      <%= render 'layouts/notice' %>
+    <% end %>
 
-  <% if notice %>
-    <%= render 'layouts/notice' %>
-  <% end %>
+    <% if alert %>
+      <%= render 'layouts/alert' %>
+    <% end %>
 
-  <% if alert %>
-    <%= render 'layouts/alert' %>
-  <% end %>
-
+  </div>
   <%= render 'layouts/footer' %>
 
   <%= javascript_include_tag 'application' %>
