@@ -2,6 +2,20 @@
   <div class="container">
     <h1>We've Got You Covered <span>[</span> and Showered <span>]</span></h1>
     <p>Take a shower on the spot! We have the solution to unexpected events!</p>
+
+    <%= form_tag showers_path, method: :get do %>
+    <div class= "form-row pt-3">
+      <div class="col-4">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search by name or city" %>
+      </div>
+      <div class="col">
+      <%= button_tag "Search", class: "btn btn-primary mt-0 ml-2 w-25 border" %>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
 

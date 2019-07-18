@@ -15,12 +15,14 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-# Gem for user login / signup
-gem 'devise'
-
-#Added Gems
+# Added Gems
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
+gem 'pg_search'
+gem 'geocoder'
+
+# Gem for user login / signup
+gem 'devise'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
