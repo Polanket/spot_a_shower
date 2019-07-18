@@ -7,7 +7,8 @@ class ShowersController < ApplicationController
   end
 
   def results
-    @results = Shower.where.not(latitude: nil, longitude: nil)
+    showers = Shower.search_by_name_and_address(params[:query])
+    @results = showers.where.not(latitude: nil, longitude: nil)
 
     @markers = @results.map do |result|
       {
@@ -37,13 +38,13 @@ class ShowersController < ApplicationController
   end
 
   def edit
-    @shower = Shower.new
+    # @shower = Shower.new
   end
 
   def update
     @shower = Shower.new(shower_params)
     @shower.user = current_user
-    if @shower.update
+    if @shower.save
       redirect_to shower_path(@shower)
     else
       render :new
