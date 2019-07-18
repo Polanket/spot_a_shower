@@ -57,17 +57,18 @@
 }
 
 .card-shower-infos .card-shower-pricing {
-  position: relative;
   margin-right: 8px;
   margin-top: 8px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .card-shower .card-shower-infos {
-  padding: 16px;
+  padding: 24px 16px 16px 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   position: relative;
+  min-height: 115px;
 }
 
 .card-shower-infos .card-shower-user {
