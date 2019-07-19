@@ -2,6 +2,7 @@
   <div class="card">
     <% current_user.bookings.each do |booking| %>
     <% shower = current_user.booked_showers.where(id: booking.shower_id).last %>
+    <%= link_to shower_path(shower) do %>
     <div class="card-shower">
      <% if shower.photo.present? %>
      <%= cl_image_tag shower.photo, crop: :fill%>
@@ -19,5 +20,7 @@
     </div>
   </div>
   <% end %>
+  <% end %>
 </div>
 </div>
+
