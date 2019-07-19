@@ -1,24 +1,23 @@
   <div class="row">
-    <div class="col-0 col-md-3 p-4">
+    <div class="d-flex justify-content-center col-0 col-sm-6 col-md-4 col-lg-3 p-4">
       <div class = "p-4">
       <% if current_user.avatar.present? %>
-      <%= cl_image_tag current_user.avatar, width: 150, height: 150, crop: :thumb, gravity: :face, radius: 10 %>
+      <%= cl_image_tag current_user.avatar, width: 200, height: 200, crop: :thumb, gravity: :face, radius: 8, effect: :sharpen, class: "shadow mt-3" %>
       <% else %>
       <%= image_tag "avatar.png",  class:"avatar-large" %>
       <% end %>
 
       <div class="">
         <h3 class="pt-4"><%= current_user.first_name %> <%= current_user.last_name %></h3>
-        <h5 class="py-2"><%= current_user.email %></h5>
-        <%= link_to "Edit", edit_user_registration_path, class: "btn btn-sm btn-primary m-1" %>
+        <p class="py-2 text-secondary"><%= current_user.email %></p>
+        <%= link_to "Edit", edit_user_registration_path, class: "btn btn-md btn-primary m-1" %>
       </div>
       </div>
     </div>
-    <div class="col-12 col-md-9">
+    <div class="col-12 col-sm-6 col-md-8 col-lg-9 p-0 ">
       <section id="tabs">
-        <div class="container">
-          <div class="row pt-">
-            <div class="col-xs-12 ">
+          <div class="row">
+            <div class="col-auto">
               <nav class="nad nav-pills nav-fill">
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                   <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Listed Showers</a>
@@ -26,9 +25,9 @@
 
                 </div>
               </nav>
-              <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+              <div class="tab-content px-3 px-sm-0" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                 <div class="profile-page">
+                 <div>
                   <% if current_user.owned_showers.present? %>
                   <div class="showers">
                     <%= render 'users/offerings' %>
@@ -39,7 +38,7 @@
               </div>
               <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-                <div class="profile-page">
+                <div>
                   <% if current_user.bookings.present? %>
                   <div class="showers">
                     <%= render 'users/bookings' %>
@@ -50,7 +49,6 @@
             </div>
           </div>
         </div>
-      </div>
     </section>
   </div>
 </div>
