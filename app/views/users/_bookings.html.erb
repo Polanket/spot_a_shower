@@ -1,20 +1,23 @@
 <div class="bookings">
-  <h1>Your Booked Showers:</h1>
   <div class="card">
     <% current_user.bookings.each do |booking| %>
-      <% shower = current_user.booked_showers.where(id: booking.shower_id).last %>
-      <div class="card-shower">
-        <%= cl_image_tag shower.photo, crop: :fill %>
-        <div class="card-shower-infos">
-          <div>
-            <h1><strong><%= shower.title %></strong></h1>
-            <h1><%= booking.date %></h1>
-            <p><%= shower.address %></p>
-          </div>
-          <h2 class="card-shower-pricing"><%= " #{shower.price}€ " %></h2>
-          <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered"%>
-        </div>
+    <% shower = current_user.booked_showers.where(id: booking.shower_id).last %>
+    <div class="card-shower">
+     <% if shower.photo.present? %>
+     <%= cl_image_tag shower.photo, crop: :fill%>
+     <% else %>
+     <%= image_tag('bath.jpg') %>
+     <% end %>
+     <div class="card-shower-infos">
+      <div>
+        <h1><strong><%= shower.title %></strong></h1>
+        <h1><%= booking.date %></h1>
+        <p><%= shower.address %></p>
       </div>
-    <% end %>
+      <h2 class="card-shower-pricing"><%= " #{shower.price}€ " %></h2>
+      <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered"%>
+    </div>
   </div>
+  <% end %>
+</div>
 </div>

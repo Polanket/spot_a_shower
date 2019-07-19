@@ -34,8 +34,8 @@
     hint: "we need your current password to confirm your changes",
     required: true,
     input_html: { autocomplete: "current-password" } %>
-    <%= f.input :photo, class: "form-control-file" %>
-    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :avatar, class: "form-control-file" %>
+    <%= f.input :avatar_cache, as: :hidden %>
   </div>
   <div class="form-actions text-center">
     <%= f.button :submit, "Update", class: "btn btn-primary btn-block", id: "main-btn" %>
