@@ -38,14 +38,6 @@
       </ul>
     </div>
 
-    <div class="pr-5 pt-3 bd-highlight w-25 text-center">
-      <% if @shower.user.avatar.present? %>
-      <%= cl_image_tag @shower.user.avatar, width: 56, height: 56, crop: :thumb, gravity: :face, class:"avatar-large" %>
-      <% else %>
-      <%= image_tag "avatar.png",  class:"avatar-large" %>
-      <% end %>
-      <p><%= @shower.user.first_name %></p>
-    </div>
     <div class="p-3 d-flex flex-column justify-content-between">
       <div
         id="map"
