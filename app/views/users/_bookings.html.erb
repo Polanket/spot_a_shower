@@ -2,7 +2,6 @@
   <div class="card">
     <% current_user.bookings.each do |booking| %>
     <% shower = current_user.booked_showers.where(id: booking.shower_id).last %>
-    <%= link_to shower_path(shower) do %>
     <div class="card-shower">
      <% if shower.photo.present? %>
      <%= cl_image_tag shower.photo, crop: :fill%>
@@ -16,11 +15,15 @@
         <p><%= shower.address.split(',').first(2).join(', ') %></p>
       </div>
       <h2 class="card-shower-pricing"><%= " #{shower.price}€ " %></h2>
-      <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered"%>
+   <% if current_user.avatar.present? %>
+      <%= cl_image_tag current_user.avatar, width: 40, height: 40, crop: :thumb, gravity: :face, class:"card-shower-user avatar-bordered"%>
+      <% else %>
+      <%= image_tag "avatar.png",  class:"avatar-large" %>
+      <% end %>
     </div>
   </div>
   <% end %>
-  <% end %>
 </div>
 </div>
+
 
