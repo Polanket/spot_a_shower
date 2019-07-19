@@ -3,6 +3,19 @@
   margin: 12px 0;
 }
 
+.list-unstyled .fas {
+ color: rgb(105,105,105);
+}
+
+.list-unstyled strong {
+  color: rgb(152,152,152);
+}
+
 .main-content {
   min-height: calc(100vh - 196px);
+}
+
+
+.shower-title-color{
+  color: $main_blue;
 }
