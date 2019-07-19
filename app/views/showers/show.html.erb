@@ -34,7 +34,7 @@
       <p><%= @shower.user.first_name %></p>
     </div>
     <div class="p-3">
-      <%= render 'bookings/form' %>
+      <%= render 'bookings/form', shower: @shower, booking: @booking %>
     </div>
   </div>
   <hr>
