@@ -33,7 +33,7 @@
         <div class="card-shower-infos">
           <div>
             <h1><%= shower.title %></h1>
-            <h2><%= shower.address %></h2>
+            <h2><%= shower.address.split(',').first(2).join(', ') %></h2>
           </div>
           <h2 class="card-shower-pricing">€<%= shower.price %></h2>
           <% user = User.find(shower.user_id) %>

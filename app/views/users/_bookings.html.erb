@@ -2,6 +2,7 @@
   <div class="card">
     <% current_user.bookings.each do |booking| %>
     <% shower = current_user.booked_showers.where(id: booking.shower_id).last %>
+    <%= link_to shower_path(shower) do %>
     <div class="card-shower">
      <% if shower.photo.present? %>
      <%= cl_image_tag shower.photo, crop: :fill%>
@@ -12,7 +13,7 @@
       <div>
         <h1><strong><%= shower.title %></strong></h1>
         <h1><%= booking.date %></h1>
-        <p><%= shower.address %></p>
+        <p><%= shower.address.split(',').first(2).join(', ') %></p>
         <%= link_to "Cancel", shower_booking_path(shower, booking), method: :delete, class:"btn btn-danger mt-3" %>
       </div>
       <h2 class="card-shower-pricing"><%= " #{shower.price}€ " %></h2>
@@ -20,5 +21,7 @@
     </div>
   </div>
   <% end %>
+  <% end %>
 </div>
 </div>
+
