@@ -35,7 +35,14 @@ class ShowersController < ApplicationController
   end
 
   def show
+    @shower = Shower.find(params[:id])
     @booking = Booking.new
+
+    @markers = {
+      lat: @shower.latitude,
+      lng: @shower.longitude,
+      infoWindow: render_to_string(partial: "infowindow", locals: { result: @shower })
+    }
   end
 
   def edit
