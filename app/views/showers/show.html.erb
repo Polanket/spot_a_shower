@@ -41,7 +41,7 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
       ></div>
       <div>
-        <%= render 'bookings/form' %>
+        <%= render 'bookings/form', shower: @shower, booking: @booking %>
       </div>
     </div>
   </div>
