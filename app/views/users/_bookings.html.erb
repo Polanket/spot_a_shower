@@ -13,6 +13,7 @@
         <h1><strong><%= shower.title %></strong></h1>
         <h1><%= booking.date %></h1>
         <p><%= shower.address %></p>
+        <%= link_to "Cancel", shower_booking_path(shower, booking), method: :delete, class:"btn btn-danger mt-3" %>
       </div>
       <h2 class="card-shower-pricing"><%= " #{shower.price}€ " %></h2>
       <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered"%>
