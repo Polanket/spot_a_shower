@@ -1,4 +1,13 @@
 <div class="container mt-4">
+  <div>
+    <h1><%= current_user.first_name %>'Dashboard</h1>
+    <h5><%= current_user.email %></h5>
+
+  </div>
+
+
+
+
   <div class="profile-page">
     <% if current_user.owned_showers.present? || current_user.bookings.present? %>
       <div class="showers">
