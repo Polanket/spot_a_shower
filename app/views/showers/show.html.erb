@@ -35,6 +35,12 @@
     </div>
     <div class="p-3">
       <%= render 'bookings/form' %>
+      <div
+        id="map"
+        style="height: 200px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
+      ></div>
     </div>
   </div>
   <hr>

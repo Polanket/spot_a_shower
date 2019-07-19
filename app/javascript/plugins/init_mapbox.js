@@ -16,15 +16,28 @@ const initMapbox = () => {
       style: 'mapbox://styles/polanket/cjy8h2en50moo1cobqbfj4we9'
     });
 
-    const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
+    const markers = JSON.parse(mapElement.dataset.markers);
+    if (Array.isArray(markers)) {
+      markers.forEach((marker) => {
+        const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+
+        new mapboxgl.Marker()
+          .setLngLat([ marker.lng, marker.lat])
+          .setPopup(popup)
+          .addTo(map);
+      });
+    } else {
+      const popup = new mapboxgl.Popup().setHTML(markers.infowindow);
       new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat])
+        .setLngLat([ markers.lng, markers.lat ])
         .setPopup(popup)
         .addTo(map);
-    });
+      map.flyTo({
+        center: [ markers.lng, markers.lat ],
+        zoom: 14
+      })
+    }
 
     fitMapToMarkers(map, markers);
   }
