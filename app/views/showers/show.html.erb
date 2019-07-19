@@ -33,14 +33,16 @@
       <% end %>
       <p><%= @shower.user.first_name %></p>
     </div>
-    <div class="p-3">
+    <div class="p-3 d-flex flex-column justify-content-between">
       <div
         id="map"
         style="height: 250px;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>"
       ></div>
-      <%= render 'bookings/form' %>
+      <div>
+        <%= render 'bookings/form' %>
+      </div>
     </div>
   </div>
   <hr>
