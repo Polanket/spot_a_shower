@@ -38,7 +38,7 @@
           <h2 class="card-shower-pricing">€<%= shower.price %></h2>
           <% user = User.find(shower.user_id) %>
           <% if user.avatar.present? %>
-          <%= cl_image_tag user.avatar, crop: :fill%>
+          <%= cl_image_tag user.avatar, width: 40, height: 40, crop: :thumb, gravity: :face, class:"card-shower-user avatar-bordered"%>
           <% else %>
           <%= image_tag "avatar.png", class:"card-shower-user avatar-bordered" %>
           <% end %>
